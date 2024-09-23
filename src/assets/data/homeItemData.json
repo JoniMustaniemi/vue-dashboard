@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Real-Time Monitoring",
+        "text": "Our system ensures real-time data capture, allowing immediate insights and actions.",
+        "alignment": "left",
+        "image": "realTimeMonitoring"
+    },
+    {
+        "id": 2,
+        "title": "Secure Storage",
+        "text": "Data is securely stored in our cloud infrastructure, ensuring safety and accessibility.",
+        "alignment": "right",
+        "image": "dataSecurity"
+    },
+    {
+        "id": 3,
+        "title": "Advanced Analytics",
+        "text": "Utilize powerful tools to analyze your sensory data and drive informed decisions.",
+        "alignment": "left",
+        "image": "analytics"
+    }
+]

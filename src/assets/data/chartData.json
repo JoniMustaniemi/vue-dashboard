@@ -1,0 +1,220 @@
+{
+    "charts": [
+        {
+            "id": 1,
+            "title": "Temperature Sensor 1",
+            "date": "01-01-2024",
+            "sensoryType": "temperature",
+            "sensoryData": {
+                "temperature": []
+            }
+        },
+        {
+            "id": 2,
+            "title": "Temperature Sensor 2",
+            "date": "01-01-2024",
+            "sensoryType": "temperature",
+            "sensoryData": {
+                "temperature": []
+            }
+        },
+        {
+            "id": 3,
+            "title": "Humidity Sensor 1",
+            "date": "01-01-2024",
+            "sensoryType": "humidity",
+            "sensoryData": {
+                "humidity": []
+            }
+        },
+        {
+            "id": 4,
+            "title": "Humidity Sensor 2",
+            "date": "01-01-2024",
+            "sensoryType": "humidity",
+            "sensoryData": {
+                "humidity": []
+            }
+        },
+        {
+            "id": 5,
+            "title": "Pressure Sensor 1",
+            "date": "01-01-2024",
+            "sensoryType": "pressure",
+            "sensoryData": {
+                "pressure": []
+            }
+        },
+        {
+            "id": 6,
+            "title": "Pressure Sensor 2",
+            "date": "01-01-2024",
+            "sensoryType": "pressure",
+            "sensoryData": {
+                "pressure": []
+            }
+        },
+        {
+            "id": 7,
+            "title": "Light Sensor 1",
+            "date": "01-01-2024",
+            "sensoryType": "light",
+            "sensoryData": {
+                "light": []
+            }
+        },
+        {
+            "id": 8,
+            "title": "Light Sensor 2",
+            "date": "01-01-2024",
+            "sensoryType": "light",
+            "sensoryData": {
+                "light": []
+            }
+        },
+        {
+            "id": 9,
+            "title": "Temperature Sensor 1",
+            "date": "01-02-2024",
+            "sensoryType": "temperature",
+            "sensoryData": {
+                "temperature": []
+            }
+        },
+        {
+            "id": 10,
+            "title": "Temperature Sensor 2",
+            "date": "01-02-2024",
+            "sensoryType": "temperature",
+            "sensoryData": {
+                "temperature": []
+            }
+        },
+        {
+            "id": 11,
+            "title": "Humidity Sensor 1",
+            "date": "01-02-2024",
+            "sensoryType": "humidity",
+            "sensoryData": {
+                "humidity": []
+            }
+        },
+        {
+            "id": 12,
+            "title": "Humidity Sensor 2",
+            "date": "01-02-2024",
+            "sensoryType": "humidity",
+            "sensoryData": {
+                "humidity": []
+            }
+        },
+        {
+            "id": 13,
+            "title": "Pressure Sensor 1",
+            "date": "01-02-2024",
+            "sensoryType": "pressure",
+            "sensoryData": {
+                "pressure": []
+            }
+        },
+        {
+            "id": 14,
+            "title": "Pressure Sensor 2",
+            "date": "01-02-2024",
+            "sensoryType": "pressure",
+            "sensoryData": {
+                "pressure": []
+            }
+        },
+        {
+            "id": 15,
+            "title": "Light Sensor 1",
+            "date": "01-02-2024",
+            "sensoryType": "light",
+            "sensoryData": {
+                "light": []
+            }
+        },
+        {
+            "id": 16,
+            "title": "Light Sensor 2",
+            "date": "01-02-2024",
+            "sensoryType": "light",
+            "sensoryData": {
+                "light": []
+            }
+        },
+        {
+            "id": 17,
+            "title": "Temperature Sensor 1",
+            "date": "01-03-2024",
+            "sensoryType": "temperature",
+            "sensoryData": {
+                "temperature": []
+            }
+        },
+        {
+            "id": 18,
+            "title": "Temperature Sensor 2",
+            "date": "01-03-2024",
+            "sensoryType": "temperature",
+            "sensoryData": {
+                "temperature": []
+            }
+        },
+        {
+            "id": 19,
+            "title": "Humidity Sensor 1",
+            "date": "01-03-2024",
+            "sensoryType": "humidity",
+            "sensoryData": {
+                "humidity": []
+            }
+        },
+        {
+            "id": 20,
+            "title": "Humidity Sensor 2",
+            "date": "01-03-2024",
+            "sensoryType": "humidity",
+            "sensoryData": {
+                "humidity": []
+            }
+        },
+        {
+            "id": 21,
+            "title": "Pressure Sensor 1",
+            "date": "01-03-2024",
+            "sensoryType": "pressure",
+            "sensoryData": {
+                "pressure": []
+            }
+        },
+        {
+            "id": 22,
+            "title": "Pressure Sensor 2",
+            "date": "01-03-2024",
+            "sensoryType": "pressure",
+            "sensoryData": {
+                "pressure": []
+            }
+        },
+        {
+            "id": 23,
+            "title": "Light Sensor 1",
+            "date": "01-03-2024",
+            "sensoryType": "light",
+            "sensoryData": {
+                "light": []
+            }
+        },
+        {
+            "id": 24,
+            "title": "Light Sensor 2",
+            "date": "01-03-2024",
+            "sensoryType": "light",
+            "sensoryData": {
+                "light": []
+            }
+        }
+    ]
+}
