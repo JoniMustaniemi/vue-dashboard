@@ -10,6 +10,7 @@ import {
 import { getChartConfig } from "@/charts/chartOptions";
 import RandomDataGenerators from "@/charts/dataGeneration.js";
 import chartData from "@/assets/data/chartData.json";
+import { useFilterStore } from "@/stores/useFilterStore";
 
 const props = defineProps({
   title: {
@@ -28,6 +29,7 @@ const props = defineProps({
 
 const emit = defineEmits(["update:selected-charts"]);
 
+const filterStore = useFilterStore();
 const chartOptions = ref({});
 const isBarChart = ref(false);
 const data = ref({});
@@ -97,6 +99,18 @@ const watchProps = () => {
       fillColor.value,
     ],
     updateChartConfig
+  );
+
+  watch(
+    () => [
+      filterStore.selectedDates,
+      filterStore.selectedSensoryType,
+      filterStore.numberOfDisplayedCharts,
+    ],
+    () => {
+      isSelected.value = false;
+    },
+    { deep: true }
   );
 
   watch(isSelected, (newValue) => {
