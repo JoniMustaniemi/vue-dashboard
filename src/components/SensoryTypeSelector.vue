@@ -23,7 +23,7 @@ const applyFilter = () => {
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="8">
         <v-select
           v-model="selectedSensoryType"
           :items="sensoryTypes"
@@ -33,6 +33,7 @@ const applyFilter = () => {
           item-value="value"
           class="text-capitalize"
           item-color="teal"
+          :style="{ minWidth: '150px' }" 
         >
           <template v-slot:selection="{ item }">
             <span class="text-capitalize">{{ item }}</span>

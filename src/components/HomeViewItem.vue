@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 
 const props = defineProps({
   title: String,
@@ -11,6 +11,12 @@ const props = defineProps({
   },
   image: String,
 });
+
+const imageLoaded = ref(false);
+
+const handleImageLoad = () => {
+  imageLoaded.value = true;
+};
 </script>
 
 <template>
@@ -25,13 +31,26 @@ const props = defineProps({
         :src="image"
         height="100%"
         width="100%"
-        style="position: absolute; top: 0; left: 0; z-index: 1"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          min-width: 320px;
+        "
         class="rounded-xl"
+        @load="handleImageLoad"
       />
 
       <v-container
-        style="background: rgba(0, 0, 0, 0.5); z-index: 2; position: relative"
+        style="
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 2;
+          position: relative;
+          min-width: 300px;
+        "
         class="rounded-xl"
+        v-if="imageLoaded"
       >
         <v-container
           class="white--text display-2"
@@ -39,6 +58,7 @@ const props = defineProps({
         >
           {{ props.title }}
         </v-container>
+
         <v-container class="white--text display-1">
           {{ props.description }}
         </v-container>

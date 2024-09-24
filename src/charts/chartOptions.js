@@ -119,7 +119,7 @@ export const getChartConfig = (
     chart: {
       type: chartType,
       backgroundColor: null,
-      borderColor: "#000000",
+      borderColor: "#708090",
       borderWidth: 1,
       borderRadius: 10,
     },

@@ -7,15 +7,15 @@ import DisplayAmountFilter from "./DisplayAmountFilter.vue";
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="4" class="d-flex align-center">
+      <v-col cols="12" md="4">
         <SensoryTypeFilter />
       </v-col>
 
-      <v-col cols="12" md="4" class="d-flex align-center">
+      <v-col cols="12" md="4">
         <DisplayAmountFilter />
       </v-col>
 
-      <v-col cols="12" md="4" class="d-flex align-center">
+      <v-col cols="12" md="4">
         <DatePickerDialog />
       </v-col>
     </v-row>

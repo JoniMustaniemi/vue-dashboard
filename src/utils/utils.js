@@ -1,6 +1,14 @@
 import { ref } from "vue";
 import { getChartConfig } from "@/charts/chartOptions";
+import moment from "moment";
 
+/**
+ * Shades a given hex color by a specified percentage.
+ *
+ * @param {string} color - The hex color code (e.g., '#3498db').
+ * @param {number} percent - The percentage to shade the color. Positive values lighten the color, while negative values darken it.
+ * @return {string} - The shaded color as a hex code.
+ */
 export const shadeColor = (color, percent) => {
   const num = parseInt(color.slice(1), 16);
   const amt = Math.round(2.55 * percent);
@@ -18,6 +26,12 @@ export const shadeColor = (color, percent) => {
     .slice(1)}`;
 };
 
+/**
+ * Returns the unit of measurement for a given chart type.
+ *
+ * @param {string} chartType - The type of chart (e.g., 'temperature', 'humidity').
+ * @return {string} - The corresponding unit of measurement for the chart type.
+ */
 export const getUnit = (chartType) => {
   switch (chartType) {
     case "temperature":
@@ -33,6 +47,11 @@ export const getUnit = (chartType) => {
   }
 };
 
+/**
+ * A mapping of chart types to their respective base colors.
+ *
+ * @type {Object<string, string>}
+ */
 export const colorMap = {
   temperature: "#3498db",
   humidity: "#2ecc71",
@@ -40,6 +59,13 @@ export const colorMap = {
   light: "#f1c40f",
 };
 
+/**
+ * Generates chart options for Highcharts based on provided charts and chart type.
+ *
+ * @param {Array} charts - An array of chart objects containing data and metadata.
+ * @param {Object} chartType - The type of chart (e.g., 'temperature', 'humidity').
+ * @return {Object} - A configuration object for Highcharts containing chart options.
+ */
 export const generateChartOptions = (charts, chartType) => {
   const seriesData = [];
 
@@ -139,10 +165,52 @@ export const generateChartOptions = (charts, chartType) => {
   };
 };
 
+/**
+ * Creates a reference for the chart type and provides a method to toggle between chart types.
+ *
+ * @return {Object} - An object containing the current chart type and a function to toggle the chart type.
+ */
 export const createChartTypeRef = () => {
   const chartType = ref("column");
   const toggleChartType = () => {
     chartType.value = chartType.value === "column" ? "line" : "column";
   };
   return { chartType, toggleChartType };
+};
+
+/**
+ * Filters charts based on the selected filter criteria from the filter store.
+ * @param {Array} charts - The array of charts to filter.
+ * @param {Object} filterStore - The filter store containing selected filters.
+ * @returns {Array} - The filtered array of charts.
+ */
+export const getFilteredCharts = (charts, filterStore) => {
+  let result = charts;
+
+  // Filter by selected dates.
+  if (filterStore.selectedDates.length > 0) {
+    result = result.filter((chart) => {
+      const chartDateFormatted = moment(chart.date, "DD-MM-YYYY").format(
+        "YYYY-MM-DD"
+      );
+      return filterStore.selectedDates.includes(chartDateFormatted);
+    });
+  }
+
+  // Filter by selected sensory type.
+  if (
+    filterStore.selectedSensoryType &&
+    filterStore.selectedSensoryType !== "All"
+  ) {
+    result = result.filter(
+      (chart) => chart.sensoryType === filterStore.selectedSensoryType
+    );
+  }
+
+  // Limit the number of displayed charts.
+  if (filterStore.numberOfDisplayedCharts !== "All") {
+    result = result.slice(0, filterStore.numberOfDisplayedCharts);
+  }
+
+  return result;
 };

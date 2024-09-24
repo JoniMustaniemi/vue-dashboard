@@ -1,55 +1,26 @@
 <script setup>
 import { ref, computed, watch } from "vue";
-import moment from "moment";
 import FilterBar from "@/components/FilterBar.vue";
 import ChartElement from "@/components/ChartElement.vue";
 import CombinedChartModal from "@/components/CombinedChartModal.vue";
 import chartData from "@/assets/data/chartData.json";
 import { useFilterStore } from "@/stores/useFilterStore";
+import { getFilteredCharts } from "@/utils/utils";
 
 const charts = ref(chartData.charts);
 const filterStore = useFilterStore();
 const selectedCombinedCharts = ref([]);
 const showModal = ref(false);
 
-const filteredCharts = computed(() => {
-  let result = charts.value;
-
-  if (filterStore.selectedDates.length > 0) {
-    result = result.filter((chart) => {
-      const chartDateFormatted = moment(chart.date, "DD-MM-YYYY").format(
-        "YYYY-MM-DD"
-      );
-      return filterStore.selectedDates.includes(chartDateFormatted);
-    });
-  }
-
-  if (
-    filterStore.selectedSensoryType &&
-    filterStore.selectedSensoryType !== "All"
-  ) {
-    result = result.filter(
-      (chart) => chart.sensoryType === filterStore.selectedSensoryType
-    );
-  }
-
-  if (filterStore.numberOfDisplayedCharts !== "All") {
-    result = result.slice(0, filterStore.numberOfDisplayedCharts);
-  }
-
-  return result;
-});
-
-watch(
-  () => [
-    filterStore.selectedDates,
-    filterStore.selectedSensoryType,
-    filterStore.numberOfDisplayedCharts,
-  ],
-  () => {
-    console.log("Filtered Charts:", filteredCharts.value);
-  }
+const filteredCharts = computed(() =>
+  getFilteredCharts(charts.value, filterStore)
 );
+
+watch(() => [
+  filterStore.selectedDates,
+  filterStore.selectedSensoryType,
+  filterStore.numberOfDisplayedCharts,
+]);
 
 const updateSelectedCharts = (chartData) => {
   if (chartData.selected) {
@@ -59,12 +30,10 @@ const updateSelectedCharts = (chartData) => {
       (chart) => chart.title !== chartData.title
     );
   }
-  console.log("Selected Combined Charts:", selectedCombinedCharts.value);
 };
 
 const openModal = () => {
   showModal.value = true;
-  console.log(showModal.value);
 };
 
 const closeModal = () => {
@@ -80,8 +49,8 @@ const isDisabled = computed(() => selectedCombinedCharts.value.length === 0);
     <v-container>
       <v-btn
         @click="openModal"
-        class="mt-4 black--text"
-        color="teal lighten-4"
+        class="mt-4 white--text"
+        color="blue grey darken-3"
         :disabled="isDisabled"
         elevated="5"
       >

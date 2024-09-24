@@ -32,10 +32,16 @@ const chartOptions = computed(() =>
       <v-card-title>
         <span class="headline">Combined Chart</span>
         <v-spacer></v-spacer>
-        <v-btn class="mr-5" color="primary" @click="toggleChartType" small>
+        <v-btn
+          class="mr-5 green darken-3 white--text"
+          @click="toggleChartType"
+          small
+        >
           Switch to {{ chartType === "column" ? "Line" : "Bar" }} Chart
         </v-btn>
-        <v-btn color="secondary" @click="close" small> Close </v-btn>
+        <v-btn class="red darken-3 white--text" @click="close" small>
+          Close
+        </v-btn>
       </v-card-title>
 
       <v-card-text>
