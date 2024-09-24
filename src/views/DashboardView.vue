@@ -44,9 +44,9 @@ const isDisabled = computed(() => selectedCombinedCharts.value.length === 0);
 </script>
 
 <template>
-  <v-container>
+  <v-container class="px-0">
     <FilterBar />
-    <v-container>
+    <v-container class="px-0">
       <v-btn
         @click="openModal"
         class="mt-4 white--text"

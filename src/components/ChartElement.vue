@@ -145,7 +145,7 @@ const toggleChartType = () => {
 </script>
 
 <template>
-  <v-col cols="12" md="6" class="chart-element">
+  <v-col cols="12" md="6">
     <v-card
       class="border rounded shadow pa-3 grey lighten-4"
       style="min-width: 320px"
