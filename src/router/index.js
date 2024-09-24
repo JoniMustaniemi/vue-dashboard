@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import DashboardView from "../views/DashboardView.vue";
 import HomeView from "../views/HomeView.vue";
-import faqView from "../views/FaqView.vue";
+import FaqView from "../views/FaqView.vue";
 
 Vue.use(VueRouter);
 
@@ -20,7 +20,7 @@ const routes = [
   {
     path: "/FAQ",
     name: "faq",
-    component: faqView,
+    component: FaqView,
   },
 ];
 
