@@ -5,8 +5,8 @@ import images from "@/assets/index.js";
 </script>
 
 <template>
-  <v-container fluid class="pa-0 ma-0">
-    <v-row class="ma-0 pa-0">
+  <v-container class="pa-0 ma-0">
+    <v-row>
       <v-col
         v-for="item in homeItemData"
         :key="item.id"

@@ -20,12 +20,12 @@ const handleImageLoad = () => {
 </script>
 
 <template>
-  <v-container class="ma-0">
+  <v-container class="ma-0 pa-0">
     <v-container
       fluid
       :class="props.alignment === 'right' ? 'text-right' : 'text-left'"
       style="min-height: 90vh; position: relative"
-      class="d-flex flex-column justify-center"
+      class="d-flex flex-column justify-center pa-0"
     >
       <v-img
         :src="image"
@@ -38,7 +38,6 @@ const handleImageLoad = () => {
           z-index: 1;
           min-width: 320px;
         "
-        class="rounded-xl"
         @load="handleImageLoad"
       />
 
