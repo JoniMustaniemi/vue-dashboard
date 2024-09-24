@@ -20,6 +20,7 @@ const isOpen = (itemId) => openItem.value === itemId;
       <v-card-title
         @click="toggle(item.id)"
         class="d-flex justify-between align-center teal darken-3"
+        style="word-break: break-word"
       >
         <span class="white--text">{{ item.title }}</span>
         <v-icon class="white--text">{{
@@ -27,12 +28,18 @@ const isOpen = (itemId) => openItem.value === itemId;
         }}</v-icon>
       </v-card-title>
       <v-card-text v-if="isOpen(item.id)" class="teal lighten-5 pa-4">
-        <span class="font-weight-bold text-h6 d-none d-sm-inline">{{
-          item.content
-        }}</span>
-        <span class="font-weight-bold text-body-1 d-sm-none">{{
-          item.content
-        }}</span>
+        <span
+          class="font-weight-bold text-h6 d-none d-sm-inline"
+          style="word-break: break-word"
+        >
+          {{ item.content }}
+        </span>
+        <span
+          class="font-weight-bold text-body-1 d-sm-none"
+          style="word-break: break-word"
+        >
+          {{ item.content }}
+        </span>
       </v-card-text>
     </v-card>
   </v-container>
