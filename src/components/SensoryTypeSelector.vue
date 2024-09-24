@@ -5,7 +5,7 @@ import chartData from "@/assets/data/chartData.json";
 
 const filterStore = useFilterStore();
 
-const selectedSensoryType = ref("All");
+const selectedSensoryType = ref(filterStore.selectedSensoryType);
 
 const sensoryTypes = computed(() => {
   const types = new Set();
@@ -33,7 +33,7 @@ const applyFilter = () => {
           item-value="value"
           class="text-capitalize"
           item-color="teal"
-          :style="{ minWidth: '150px' }" 
+          :style="{ minWidth: '150px' }"
         >
           <template v-slot:selection="{ item }">
             <span class="text-capitalize">{{ item }}</span>

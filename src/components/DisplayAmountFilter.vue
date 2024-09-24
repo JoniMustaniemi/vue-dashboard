@@ -6,7 +6,7 @@ const filterStore = useFilterStore();
 
 const dropdownOptions = ["All", 1, 2, 3, 4];
 
-const selectedOption = ref(4);
+const selectedOption = ref(filterStore.numberOfDisplayedCharts);
 
 const applyFilter = () => {
   filterStore.setNumberOfDisplayedCharts(selectedOption.value);

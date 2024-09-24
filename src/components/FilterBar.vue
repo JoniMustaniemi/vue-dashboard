@@ -1,7 +1,7 @@
 <script setup>
 import SensoryTypeFilter from "@/components/SensoryTypeSelector.vue";
 import DatePickerDialog from "@/components/DatePickerDialog.vue";
-import DisplayAmountFilter from "./DisplayAmountFilter.vue";
+import DisplayAmountFilter from "@/components/DisplayAmountFilter.vue";
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch } from "vue";
+import { ref, onBeforeUnmount, computed, watch } from "vue";
 import FilterBar from "@/components/FilterBar.vue";
 import ChartElement from "@/components/ChartElement.vue";
 import CombinedChartModal from "@/components/CombinedChartModal.vue";
@@ -12,15 +12,24 @@ const filterStore = useFilterStore();
 const selectedCombinedCharts = ref([]);
 const showModal = ref(false);
 
+onBeforeUnmount(() => {
+  filterStore.reset();
+});
+
 const filteredCharts = computed(() =>
   getFilteredCharts(charts.value, filterStore)
 );
 
-watch(() => [
-  filterStore.selectedDates,
-  filterStore.selectedSensoryType,
-  filterStore.numberOfDisplayedCharts,
-]);
+watch(
+  () => [
+    filterStore.selectedDates,
+    filterStore.selectedSensoryType,
+    filterStore.numberOfDisplayedCharts,
+  ],
+  () => {
+    filteredCharts.value = getFilteredCharts(charts.value, filterStore);
+  }
+);
 
 const updateSelectedCharts = (chartData) => {
   if (chartData.selected) {

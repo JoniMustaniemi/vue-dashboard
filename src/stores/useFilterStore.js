@@ -1,5 +1,5 @@
-import { defineStore } from "pinia";
 import { ref } from "vue";
+import { defineStore } from "pinia";
 
 /**
  * Defines the filter store to manage the state related to filtering charts.
@@ -7,9 +7,13 @@ import { ref } from "vue";
  * @return {Object} - The store state and actions for managing filters.
  */
 export const useFilterStore = defineStore("filterStore", () => {
-  const selectedDates = ref([]);
-  const selectedSensoryType = ref("All");
-  const numberOfDisplayedCharts = ref(4);
+  const defaultSensoryType = "All";
+  const defaultNumberOfDisplayedCharts = 4;
+  const defaultSelectedDates = [];
+
+  const selectedDates = ref(defaultSelectedDates);
+  const selectedSensoryType = ref(defaultSensoryType);
+  const numberOfDisplayedCharts = ref(defaultNumberOfDisplayedCharts);
 
   /**
    * Sets the selected dates in the store.
@@ -41,10 +45,17 @@ export const useFilterStore = defineStore("filterStore", () => {
     numberOfDisplayedCharts.value = value;
   };
 
+  const reset = () => {
+    selectedDates.value = defaultSelectedDates;
+    selectedSensoryType.value = defaultSensoryType;
+    numberOfDisplayedCharts.value = defaultNumberOfDisplayedCharts;
+  };
+
   return {
     selectedDates,
     selectedSensoryType,
     numberOfDisplayedCharts,
+    reset,
     setSelectedDates,
     setSelectedSensoryType,
     setNumberOfDisplayedCharts,
