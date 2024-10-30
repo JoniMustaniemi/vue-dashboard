@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vue/devtools-api": "^7.5.6",
     "core-js": "^3.8.3",
     "highcharts": "^11.4.8",
     "highcharts-vue": "^2.0.1",
