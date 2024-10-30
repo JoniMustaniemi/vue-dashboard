@@ -32,7 +32,7 @@
     {
         "id": 7,
         "title": "What is your approach to managing server costs while ensuring high availability of sensor data to customers?",
-        "content": "We conduct a comprehensive analysis of various cloud service providers, focusing on their pricing models and scalability features. By leveraging auto-scaling capabilities, we optimize resource allocation based on real-time demand, which helps to minimize operational costs. Additionally, we implement load balancing and redundancy strategies to ensure continuous availability of sensor data, thereby enhancing performance and reliability for our customers."
+        "content": "We conduct a comprehensive analysis of cloud service providers, focusing on their pricing models and scalability features. By leveraging auto-scaling capabilities, we optimize resource allocation based on real-time demand, which helps to minimize operational costs. Additionally, we implement load balancing and redundancy strategies to ensure continuous availability of sensor data, thereby enhancing performance and reliability for our customers."
     },
     {
         "id": 8,
