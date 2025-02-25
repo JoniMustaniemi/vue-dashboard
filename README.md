@@ -2,9 +2,6 @@
 
 Welcome to the **Vue Dashboard** project! This is a single-page application built using Vue.js, offering a modern, responsive user interface and robust data visualizations. Below, you will find instructions for setting up and running the project, as well as an overview of the key tools and libraries used.
 
-Check out the project in action here:
-https://jonimustaniemi-vue-dashboard.netlify.app/
-
 ## Getting Started
 
 ### Project Setup
